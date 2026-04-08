@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    
+    <form>
+        <!-- Field Set 1: Bio Data -->
+        <fieldset>
+            <legend>Bio Data</legend>
+            
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required minlength="5" maxlength="10">
+            <br><br>
+            
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+            <br><br>
+            
+            <label for="profilePic">Profile Picture:</label>
+            <input type="file" id="profilePic" name="profilePic">
+            <br><br>
+            
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="male"> <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female"> <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="other"> <label for="other">Other</label>
+            <br><br>
+            
+            <label for="nationality">Nationality:</label>
+            <select id="nationality" name="nationality">
+                <option value="">Select Nationality</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="usa">USA</option>
+                <option value="uk">UK</option>
+                <option value="canada">Canada</option>
+                <option value="australia">Australia</option>
+                <option value="other">Other</option>
+            </select>
+            <br><br>
+            
+            <label for="city">City:</label>
+            <select id="city" name="city">
+                <option value="">Select City</option>
+                <!-- Pakistan Cities -->
+                <option value="karachi">Karachi</option>
+                <option value="lahore">Lahore</option>
+                <option value="faisalabad">Faisalabad</option>
+                <option value="rawalpindi">Rawalpindi</option>
+                <option value="peshawar">Peshawar</option>
+                <option value="multan">Multan</option>
+                <option value="quetta">Quetta</option>
+                <option value="islamabad">Islamabad</option>
+                <option value="sialkot">Sialkot</option>
+                <!-- India Cities -->
+                <option value="mumbai">Mumbai</option>
+                <option value="delhi">Delhi</option>
+                <option value="bangalore">Bangalore</option>
+                <option value="hyderabad">Hyderabad</option>
+                <option value="pune">Pune</option>
+                <option value="chennai">Chennai</option>
+                <!-- USA Cities -->
+                <option value="newyork">New York</option>
+                <option value="losangeles">Los Angeles</option>
+                <option value="chicago">Chicago</option>
+                <option value="houston">Houston</option>
+                <option value="phoenix">Phoenix</option>
+                <!-- UK Cities -->
+                <option value="london">London</option>
+                <option value="manchester">Manchester</option>
+                <option value="birmingham">Birmingham</option>
+                <option value="leeds">Leeds</option>
+                <!-- Canada Cities -->
+                <option value="toronto">Toronto</option>
+                <option value="vancouver">Vancouver</option>
+                <option value="montreal">Montreal</option>
+                <option value="calgary">Calgary</option>
+                <!-- Australia Cities -->
+                <option value="sydney">Sydney</option>
+                <option value="melbourne">Melbourne</option>
+                <option value="brisbane">Brisbane</option>
+                <option value="perth">Perth</option>
+            </select>
+            <br><br>
+        </fieldset>
+        
+        <br>
+        
+        <!-- Field Set 2: Professional Experience -->
+        <fieldset>
+            <legend>Professional Experience</legend>
+            
+            <label for="experience">Total Professional Experience (Years):</label>
+            <input type="number" id="experience" name="experience" min="5">
+            <br><br>
+            
+            <label for="qualification">Qualification:</label>
+            <select id="qualification" name="qualification">
+                <option value="">Select Qualification</option>
+                <option value="12thpass">12th Pass</option>
+                <option value="diploma">Diploma</option>
+                <option value="bachelor">Bachelor's Degree</option>
+                <option value="master">Master's Degree</option>
+                <option value="phd">PhD</option>
+            </select>
+            <br><br>
+        </fieldset>
+        
+        <br>
+        
+        <!-- Field Set 3: Other Details -->
+        <fieldset>
+            <legend>Other Details</legend>
+            
+            <label for="subjects">Favourite Subjects:</label>
+            <select id="subjects" name="subjects" multiple>
+                <option value="mathematics">Mathematics</option>
+                <option value="science">Science</option>
+                <option value="english">English</option>
+                <option value="history">History</option>
+                <option value="geography">Geography</option>
+                <option value="computers">Computers</option>
+                <option value="arts">Arts</option>
+                <option value="commerce">Commerce</option>
+            </select>
+            <br><br>
+        </fieldset>
+        
+        <br>
+        
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>
