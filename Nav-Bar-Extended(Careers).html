@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiTech - Home & Careers</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #2c3e50;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Logo Section */
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-menu a:hover {
+    color: #3498db;
+}
+
+/* Avatar Section */
+.avatar-section {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #3498db;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.1);
+}
+
+/* Banner Image Section */
+.banner {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Page Heading */
+.page-heading {
+    padding: 40px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+}
+
+.page-heading h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.page-heading p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* Main Content */
+.content {
+    padding: 40px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Section Styling */
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+/* Table Styling */
+.careers-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.careers-table thead {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.careers-table th {
+    padding: 20px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #34495e;
+}
+
+.careers-table td {
+    padding: 18px 20px;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.careers-table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.careers-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.careers-table tbody tr:nth-child(even) {
+    background-color: #f5f6fa;
+}
+
+.skills-badge {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.age-requirement {
+    background-color: #e8f4f8;
+    color: #2c3e50;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.content > p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+    </style>
+</head>
+<body>
+    <!-- Navbar Start -->
+    <nav>
+        <!-- Logo on Left -->
+        <div class="logo-section">
+            <img src="https://cdn-icons-png.flaticon.com/512/2331/2331970.png" alt="Website Logo" class="logo">
+            <span style="color: white; font-weight: bold; font-size: 20px;">DigiTech</span>
+        </div>
+
+        <!-- Navigation Menu in Center -->
+        <ul class="nav-menu">
+            <li><a onclick="showSection('home')">Home</a></li>
+            <li><a onclick="showSection('about')">About</a></li>
+            <li><a onclick="showSection('services')">Services</a></li>
+            <li><a onclick="showSection('portfolio')">Portfolio</a></li>
+            <li><a onclick="showSection('careers')">Careers</a></li>
+            <li><a onclick="showSection('contact')">Contact</a></li>
+        </ul>
+
+        <!-- Avatar on Right -->
+        <div class="avatar-section">
+            <img src="https://i.pravatar.cc/50?img=12" alt="User Avatar" class="avatar">
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- HOME SECTION -->
+    <section id="home" class="section active">
+        <!-- Banner Image -->
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&h=400&fit=crop" alt="Website Banner" class="banner">
+
+        <!-- Page Heading -->
+        <section class="page-heading">
+            <h1>Welcome to Our Website</h1>
+            <p>Creating amazing digital experiences</p>
+        </section>
+
+        <!-- Main Content -->
+        <section class="content">
+            <h2>Our Services</h2>
+            <p>Explore our comprehensive range of services designed to help your business grow and succeed in the digital world.</p>
+        </section>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section">
+        <!-- Banner Image -->
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=400&fit=crop" alt="About Banner" class="banner">
+
+        <!-- Page Heading -->
+        <section class="page-heading">
+            <h1>About Us</h1>
+            <p>Learn more about DigiTech and our mission</p>
+        </section>
+
+        <!-- Main Content -->
+        <section class="content">
+            <h2>Who We Are</h2>
+            <p>DigiTech is a leading digital innovation company dedicated to transforming businesses through cutting-edge technology solutions. With a team of experienced professionals, we deliver excellence in every project.</p>
+        </section>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="section">
+        <!-- Banner Image -->
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=400&fit=crop" alt="Services Banner" class="banner">
+
+        <!-- Page Heading -->
+        <section class="page-heading">
+            <h1>Our Services</h1>
+            <p>Premium digital solutions tailored to your needs</p>
+        </section>
+
+        <!-- Main Content -->
+        <section class="content">
+            <h2>What We Offer</h2>
+            <p>We provide comprehensive digital services including web development, mobile applications, UI/UX design, and cloud solutions to help your business thrive.</p>
+        </section>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="section">
+        <!-- Banner Image -->
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=400&fit=crop" alt="Portfolio Banner" class="banner">
+
+        <!-- Page Heading -->
+        <section class="page-heading">
+            <h1>Our Portfolio</h1>
+            <p>Showcasing our best work and successful projects</p>
+        </section>
+
+        <!-- Main Content -->
+        <section class="content">
+            <h2>Featured Projects</h2>
+            <p>Browse through our collection of successful projects that demonstrate our expertise and commitment to excellence.</p>
+        </section>
+    </section>
+
+    <!-- CAREERS SECTION -->
+    <section id="careers" class="section">
+        <!-- Banner Image -->
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=400&fit=crop" alt="Careers Banner" class="banner">
+
+        <!-- Page Heading -->
+        <section class="page-heading">
+            <h1>Join Our Team</h1>
+            <p>Explore exciting career opportunities at DigiTech</p>
+        </section>
+
+        <!-- Main Content -->
+        <section class="content">
+            <h2>Current Job Openings</h2>
+            <p>We are looking for talented professionals to join our growing team. Browse the available positions below and apply for the one that matches your skills and interests.</p>
+            
+            <!-- Careers Table -->
+            <table class="careers-table">
+                <thead>
+                    <tr>
+                        <th>Job Title</th>
+                        <th>Years of Experience</th>
+                        <th>Location</th>
+                        <th>Age Requirement</th>
+                        <th>Skills Required</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Frontend Developer</strong></td>
+                        <td>2-3 years</td>
+                        <td>New York, USA</td>
+                        <td><span class="age-requirement">24 - 30</span></td>
+                        <td>
+                            <span class="skills-badge">HTML</span>
+                            <span class="skills-badge">CSS</span>
+                            <span class="skills-badge">JavaScript</span>
+                            <span class="skills-badge">React</span>
+                            <span class="skills-badge">Git</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Full Stack Developer</strong></td>
+                        <td>3-5 years</td>
+                        <td>San Francisco, USA</td>
+                        <td><span class="age-requirement">24 - 30</span></td>
+                        <td>
+                            <span class="skills-badge">HTML</span>
+                            <span class="skills-badge">CSS</span>
+                            <span class="skills-badge">JavaScript</span>
+                            <span class="skills-badge">React</span>
+                            <span class="skills-badge">MongoDB</span>
+                            <span class="skills-badge">Git</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Junior Web Developer</strong></td>
+                        <td>1-2 years</td>
+                        <td>Remote</td>
+                        <td><span class="age-requirement">24 - 30</span></td>
+                        <td>
+                            <span class="skills-badge">HTML</span>
+                            <span class="skills-badge">CSS</span>
+                            <span class="skills-badge">JavaScript</span>
+                            <span class="skills-badge">Git</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>React Developer</strong></td>
+                        <td>2-4 years</td>
+                        <td>Austin, Texas</td>
+                        <td><span class="age-requirement">24 - 30</span></td>
+                        <td>
+                            <span class="skills-badge">JavaScript</span>
+                            <span class="skills-badge">React</span>
+                            <span class="skills-badge">CSS</span>
+                            <span class="skills-badge">Git</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>MERN Stack Developer</strong></td>
+                        <td>3-5 years</td>
+                        <td>Toronto, Canada</td>
+                        <td><span class="age-requirement">24 - 30</span></td>
+                        <td>
+                            <span class="skills-badge">HTML</span>
+                            <span class="skills-badge">CSS</span>
+                            <span class="skills-badge">JavaScript</span>
+                            <span class="skills-badge">React</span>
+                            <span class="skills-badge">MongoDB</span>
+                            <span class="skills-badge">Git</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section">
+        <!-- Banner Image -->
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=400&fit=crop" alt="Contact Banner" class="banner">
+
+        <!-- Page Heading -->
+        <section class="page-heading">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our team</p>
+        </section>
+
+        <!-- Main Content -->
+        <section class="content">
+            <h2>Let's Connect</h2>
+            <p>Have questions or ready to start your next project? Contact us today and let's discuss how we can help your business succeed.</p>
+        </section>
+    </section>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
