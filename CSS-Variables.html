@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables</title>
+    <style>
+        /* Define CSS Variables */
+        :root {
+            --color-blue: #3498db;
+            --color-green: #2ecc71;
+            --color-red: #e74c3c;
+            --padding: 20px;
+        }
+
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: var(--color-blue);
+            position: sticky;
+            top: 0;
+            background-color: white;
+            padding: 20px;
+            margin: 0;
+        }
+
+        /* Static Position - Default */
+        .box-static {
+            background-color: var(--color-blue);
+            color: white;
+            padding: var(--padding);
+            margin: 10px 0;
+            position: static;
+        }
+
+        /* Relative Position */
+        .box-relative {
+            background-color: var(--color-green);
+            color: white;
+            padding: var(--padding);
+            margin: 10px 0;
+            position: relative;
+            top: 10px;
+            left: 20px;
+        }
+
+        /* Absolute Position */
+        .box-absolute {
+            background-color: var(--color-red);
+            color: white;
+            padding: var(--padding);
+            position: absolute;
+            top: 200px;
+            right: 20px;
+            width: 200px;
+        }
+
+        /* Fixed Position */
+        .box-fixed {
+            background-color: #9b59b6;
+            color: white;
+            padding: var(--padding);
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 200px;
+            z-index: 10;
+        }
+
+        /* Sticky Position */
+        .box-sticky {
+            background-color: #f39c12;
+            color: white;
+            padding: var(--padding);
+            margin: 10px 0;
+            position: sticky;
+            top: 80px;
+        }
+
+        /* Container for absolute positioned box */
+        .container {
+            position: relative;
+            background-color: #ecf0f1;
+            padding: 20px;
+            margin: 200px 0 20px 0;
+            min-height: 300px;
+            border: 2px dashed var(--color-blue);
+        }
+
+        /* Button using variables */
+        .button {
+            background-color: var(--color-blue);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            margin: 10px 5px;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+        }
+
+        .button:hover {
+            background-color: var(--color-green);
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        .info {
+            background-color: #ecf0f1;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid var(--color-blue);
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Variables & Positions Example</h1>
+
+    <div class="info">
+        <strong>Static Position:</strong> Default positioning
+    </div>
+    <div class="box-static">Box 1 - Static Position (Default)</div>
+
+    <div class="info">
+        <strong>Relative Position:</strong> Moved 10px down and 20px right from its normal position
+    </div>
+    <div class="box-relative">Box 2 - Relative Position</div>
+
+    <div class="info">
+        <strong>Sticky Position:</strong> Stays at top: 80px when scrolling
+    </div>
+    <div class="box-sticky">Box 3 - Sticky Position</div>
+
+    <p>Scroll down to see sticky and fixed positioning...</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+    <div class="container">
+        <div class="info">
+            <strong>Absolute Position:</strong> Inside this container (positioned relative)
+        </div>
+        <div class="box-absolute">Box 4 - Absolute Position</div>
+        <p>This is a relative container with absolute positioned child</p>
+        <p>The absolute box is positioned at top: 200px, right: 20px</p>
+    </div>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+    <button class="button">Click Me</button>
+    <button class="button">Click Me</button>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+    <div class="info">
+        <strong>Fixed Position:</strong> Check bottom-right corner! Stays fixed while you scroll
+    </div>
+
+    <div class="box-fixed">Box 5 - Fixed Position (Bottom-Right)</div>
+</body>
+</html>
