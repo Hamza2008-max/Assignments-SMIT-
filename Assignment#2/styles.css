@@ -1,0 +1,107 @@
+:root {
+    --primary: #0ec1b8; /* teal */
+    --dark: #0b1220; /* near black */
+    --muted: #6b7280; /* gray */
+    --glass: rgba(255,255,255,0.7);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+/* Page background */
+body {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #f3f9f8 0%, #ffffff 100%);
+    color: var(--dark);
+  padding-top: 1.25rem; /* ensure content isn't flush to the top */
+}
+
+.bg-soft { background: linear-gradient(180deg, #f3f9f8 0%, #ffffff 100%); }
+
+/* ---- Login / Auth ---- */
+.auth-card { border-radius: 18px; overflow: hidden; }
+.auth-side { background: linear-gradient(180deg, var(--primary) 0%, #0b6f66 100%); min-height: 320px; }
+.auth-side h1, .auth-side p, .auth-side .badge { color: rgba(255,255,255,0.95); }
+.auth-side .badge { font-size: 0.85rem; letter-spacing: 0.04em; }
+.login-form .form-control { border-radius: 10px; }
+.btn-primary { border-radius: 10px; background: var(--primary); border: none; }
+.btn-primary:hover { opacity: 0.95; }
+
+/* Decorative shapes for login */
+.auth-card::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  right: -80px;
+  top: -40px;
+  background: radial-gradient(circle at 30% 30%, rgba(14,193,184,0.12), transparent 40%);
+  transform: rotate(12deg);
+  border-radius: 48px;
+  pointer-events: none;
+}
+
+/* ---- App Shell / Dashboard ---- */
+.app-shell { display: flex; gap: 1.5rem; align-items: flex-start; }
+.app-shell { margin-top: 0.75rem; }
+.sidebar {
+  width: 240px;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(11,18,32,0.06);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1rem;
+  align-self: flex-start;
+  z-index: 10;
+  max-height: calc(100vh - 2.5rem);
+  overflow: auto;
+}
+.sidebar .logo-row { display:flex; align-items:center; gap:0.75rem; }
+.sidebar .nav { margin-top:1rem; }
+.nav-link-custom { color: var(--muted); padding: 0.5rem 0.5rem; display:block; border-radius:8px; }
+.nav-link-custom:hover { background: rgba(14,193,184,0.06); color: var(--primary); text-decoration:none; }
+
+.main-area { flex:1; }
+.top-bar { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+
+.stat-card { border-radius:12px; padding:1rem; background: linear-gradient(180deg,#fff,#fbfdff); box-shadow:0 8px 20px rgba(11,18,32,0.04); }
+.stat-number { font-size:1.6rem; font-weight:700; }
+
+.table-custom thead th { color: var(--muted); border-bottom:none; }
+.table-custom tbody tr:hover { background: rgba(14,193,184,0.04); }
+.table-custom td, .table-custom th { vertical-align: middle; }
+
+.dashboard-logo { width:48px; height:auto; border-radius:8px; }
+
+/* Student card styles */
+.student-card { border-radius:12px; box-shadow: 0 6px 18px rgba(11,18,32,0.04); }
+.student-img { width:72px; height:72px; object-fit:cover; border-radius:50%; border: 3px solid #fff; box-shadow: 0 6px 12px rgba(11,18,32,0.08); }
+.student-grid .card { overflow: visible; }
+
+/* Attendance-only card styles */
+.att-id { font-weight:700; font-size:1.05rem; color:var(--dark); }
+.att-badge { display:inline-block; padding:0.45rem 0.9rem; border-radius:999px; font-weight:700; box-shadow: 0 6px 12px rgba(11,18,32,0.06); }
+
+/* Skip link (visible on focus) */
+.skip-link { position: absolute; left: 0.75rem; top: 0.5rem; background:#0b1220; color:#fff; padding:0.5rem 0.75rem; border-radius:6px; transform: translateY(-120%); transition: transform .18s ease; z-index:50; }
+.skip-link:focus { transform: translateY(0); outline: none; }
+
+/* Focus styles for keyboard users */
+.nav-link-custom:focus, .nav-link-custom:focus-visible { outline: 3px solid rgba(14,193,184,0.18); box-shadow: 0 0 0 3px rgba(14,193,184,0.06); border-radius:8px; }
+.btn:focus, .btn:focus-visible { outline: 3px solid rgba(14,193,184,0.18); box-shadow: 0 0 0 3px rgba(14,193,184,0.06); }
+
+/* Student search box */
+.student-search { max-width:420px; }
+
+/* Mobile behavior: hide sidebar by default and allow mobile-visible class */
+@media (max-width: 900px) {
+  .sidebar { display: none; position: fixed; }
+  .sidebar.mobile-visible { display: block; left: 0.5rem; top: 0.5rem; bottom: 0.5rem; width: 86%; border-radius:10px; box-shadow: 0 20px 40px rgba(11,18,32,0.2); background:#fff; z-index:120; }
+  .mobile-nav-btn { display: inline-block; }
+}
+
+@media (min-width: 901px) { .mobile-nav-btn { display: none; } }
+
+@media (max-width: 900px) { .sidebar { display:none; } .app-shell { padding: 0 1rem; } }
