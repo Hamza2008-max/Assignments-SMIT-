@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-soft">
+    <a href="#dashboard-view" class="skip-link">Skip to content</a>
+    <div class="container mb-5 app-shell">
+        <aside class="sidebar">
+            <div class="logo-row">
+                <img src="logo.svg" alt="Logo" class="dashboard-logo" />
+                <div>
+                    <strong>Student Portal</strong>
+                    <div class="text-muted small">Admin Panel</div>
+                </div>
+            </div>
+
+            <nav class="nav flex-column mt-4" aria-label="Main Navigation">
+                <a class="nav-link-custom" href="#student-ids" aria-label="Student ID">Student ID</a>
+                <a class="nav-link-custom" href="#attendance" aria-label="Attendance">Attendance</a>
+            </nav>
+        </aside>
+
+        <main class="main-area">
+            <div id="dashboard-view">
+                <div class="top-bar mb-4">
+                    <div class="d-flex align-items-center gap-3">
+                        <button id="mobile-nav-toggle" class="btn btn-outline-secondary btn-sm mobile-nav-btn"
+                            aria-label="Toggle navigation">☰</button>
+                        <div>
+                            <h2 class="h4 mb-0">Dashboard</h2>
+                            <p class="text-muted small mb-0">Attendance Overview And Latest Student Details.</p>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <p class="mb-1 text-muted">Logged In As <strong>Admin</strong></p>
+                        <a href="Login.html" class="btn btn-outline-secondary btn-sm">Logout</a>
+                    </div>
+                </div>
+
+                <section class="row g-4 mb-4">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="stat-card h-100">
+                            <div class="small text-uppercase text-muted">Total Students</div>
+                            <div class="stat-number">15</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="stat-card h-100">
+                            <div class="small text-uppercase text-muted">Total Absents</div>
+                            <div class="stat-number text-danger">3</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="stat-card h-100">
+                            <div class="small text-uppercase text-muted">Total Presents</div>
+                            <div class="stat-number text-success">12</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="stat-card h-100">
+                            <div class="small text-uppercase text-muted">Classes Today</div>
+                            <div class="stat-number">4</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Student IDs Section (pics + names + IDs) -->
+            <section id="student-ids" class="mb-4">
+                <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+                    <div>
+                        <h3 class="h5 mb-0">Student IDs</h3>
+                        <p class="text-muted small mb-0">Manage the student roster and add new learners.</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <input id="student-search" class="form-control form-control-sm student-search"
+                            placeholder="Search by name or ID" aria-label="Search students">
+                        <button id="add-student-btn" type="button" class="btn btn-primary btn-sm">Add Student</button>
+                    </div>
+                </div>
+                <div class="row g-3 student-grid">
+                    <!-- Re-introduce full cards with image, name and ID -->
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card student-card text-center p-3">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ayesha Khan" loading="lazy"
+                                class="student-img mb-2" />
+                            <div class="fw-bold">Ayesha Khan</div>
+                            <div class="text-muted small">ID: 201</div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card student-card text-center p-3">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Rohan Sharma" loading="lazy"
+                                class="student-img mb-2" />
+                            <div class="fw-bold">Rohan Sharma</div>
+                            <div class="text-muted small">ID: 202</div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card student-card text-center p-3">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Priya Singh" loading="lazy"
+                                class="student-img mb-2" />
+                            <div class="fw-bold">Priya Singh</div>
+                            <div class="text-muted small">ID: 203</div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card student-card text-center p-3">
+                            <img src="https://randomuser.me/api/portraits/men/57.jpg" alt="Vikram Patel" loading="lazy"
+                                class="student-img mb-2" />
+                            <div class="fw-bold">Vikram Patel</div>
+                            <div class="text-muted small">ID: 204</div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card student-card text-center p-3">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Meera Das" loading="lazy"
+                                class="student-img mb-2" />
+                            <div class="fw-bold">Meera Das</div>
+                            <div class="text-muted small">ID: 205</div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card student-card text-center p-3">
+                            <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="Arjun Verma" loading="lazy"
+                                class="student-img mb-2" />
+                            <div class="fw-bold">Arjun Verma</div>
+                            <div class="text-muted small">ID: 206</div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card student-card text-center p-3">
+                            <img src="https://randomuser.me/api/portraits/women/21.jpg" alt="Sana Iqbal" loading="lazy"
+                                class="student-img mb-2" />
+                            <div class="fw-bold">Sana Iqbal</div>
+                            <div class="text-muted small">ID: 207</div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card student-card text-center p-3">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Daniel Mathew" loading="lazy"
+                                class="student-img mb-2" />
+                            <div class="fw-bold">Daniel Mathew</div>
+                            <div class="text-muted small">ID: 208</div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card student-card text-center p-3">
+                            <img src="https://randomuser.me/api/portraits/women/34.jpg" alt="Fatima Noor" loading="lazy"
+                                class="student-img mb-2" />
+                            <div class="fw-bold">Fatima Noor</div>
+                            <div class="text-muted small">ID: 209</div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card student-card text-center p-3">
+                            <img src="https://randomuser.me/api/portraits/men/77.jpg" alt="Mohit Kumar" loading="lazy"
+                                class="student-img mb-2" />
+                            <div class="fw-bold">Mohit Kumar</div>
+                            <div class="text-muted small">ID: 210</div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card student-card text-center p-3">
+                            <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Nisha Rao" loading="lazy"
+                                class="student-img mb-2" />
+                            <div class="fw-bold">Nisha Rao</div>
+                            <div class="text-muted small">ID: 211</div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card student-card text-center p-3">
+                            <img src="https://randomuser.me/api/portraits/men/88.jpg" alt="Omar Ali" loading="lazy"
+                                class="student-img mb-2" />
+                            <div class="fw-bold">Omar Ali</div>
+                            <div class="text-muted small">ID: 212</div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card student-card text-center p-3">
+                            <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Hina Patel" loading="lazy"
+                                class="student-img mb-2" />
+                            <div class="fw-bold">Hina Patel</div>
+                            <div class="text-muted small">ID: 213</div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card student-card text-center p-3">
+                            <img src="https://randomuser.me/api/portraits/men/29.jpg" alt="Ravi Shah" loading="lazy"
+                                class="student-img mb-2" />
+                            <div class="fw-bold">Ravi Shah</div>
+                            <div class="text-muted small">ID: 214</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="attendance" class="mb-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div>
+                                <h3 class="h6 mb-1">Student Details</h3>
+                                <p class="text-muted small mb-0">Review Attendance For Today.</p>
+                            </div>
+                            <span class="badge rounded-pill" style="background:var(--primary);color:#fff;">Updated
+                                Now</span>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover table-custom align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Class</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Remarks</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>201</td>
+                                        <td>Ayesha Khan</td>
+                                        <td>10</td>
+                                        <td><span class="badge bg-success">Present</span></td>
+                                        <td>On Time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>202</td>
+                                        <td>Rohan Sharma</td>
+                                        <td>10</td>
+                                        <td><span class="badge bg-danger">Absent</span></td>
+                                        <td>Family Reason</td>
+                                    </tr>
+                                    <tr>
+                                        <td>203</td>
+                                        <td>Priya Singh</td>
+                                        <td>9</td>
+                                        <td><span class="badge bg-success">Present</span></td>
+                                        <td>Participated Actively</td>
+                                    </tr>
+                                    <tr>
+                                        <td>204</td>
+                                        <td>Vikram Patel</td>
+                                        <td>9</td>
+                                        <td><span class="badge bg-success">Present</span></td>
+                                        <td>Excellent</td>
+                                    </tr>
+                                    <tr>
+                                        <td>205</td>
+                                        <td>Meera Das</td>
+                                        <td>10</td>
+                                        <td><span class="badge bg-danger">Absent</span></td>
+                                        <td>Medical</td>
+                                    </tr>
+                                    <tr>
+                                        <td>206</td>
+                                        <td>Arjun Verma</td>
+                                        <td>11</td>
+                                        <td><span class="badge bg-success">Present</span></td>
+                                        <td>On Time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>207</td>
+                                        <td>Sana Iqbal</td>
+                                        <td>11</td>
+                                        <td><span class="badge bg-warning text-dark">Late</span></td>
+                                        <td>Traffic Delay</td>
+                                    </tr>
+                                    <tr>
+                                        <td>208</td>
+                                        <td>Daniel Mathew</td>
+                                        <td>12</td>
+                                        <td><span class="badge bg-success">Present</span></td>
+                                        <td>On Time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>209</td>
+                                        <td>Fatima Noor</td>
+                                        <td>12</td>
+                                        <td><span class="badge bg-success">Present</span></td>
+                                        <td>Good</td>
+                                    </tr>
+                                    <tr>
+                                        <td>210</td>
+                                        <td>Mohit Kumar</td>
+                                        <td>10</td>
+                                        <td><span class="badge bg-success">Present</span></td>
+                                        <td>On Time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>211</td>
+                                        <td>Nisha Rao</td>
+                                        <td>9</td>
+                                        <td><span class="badge bg-success">Present</span></td>
+                                        <td>Participated</td>
+                                    </tr>
+                                    <tr>
+                                        <td>212</td>
+                                        <td>Omar Ali</td>
+                                        <td>11</td>
+                                        <td><span class="badge bg-danger">Absent</span></td>
+                                        <td>Illness</td>
+                                    </tr>
+                                    <tr>
+                                        <td>213</td>
+                                        <td>Hina Patel</td>
+                                        <td>12</td>
+                                        <td><span class="badge bg-success">Present</span></td>
+                                        <td>Excellent</td>
+                                    </tr>
+                                    <tr>
+                                        <td>214</td>
+                                        <td>Ravi Shah</td>
+                                        <td>10</td>
+                                        <td><span class="badge bg-success">Present</span></td>
+                                        <td>On Time</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings placeholder so sidebar link is accessible -->
+            <section id="settings" class="mb-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <h3 class="h6 mb-2">Settings</h3>
+                        <p class="text-muted small mb-0">Settings will be available here. (Placeholder)</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="modal-overlay" id="add-student-modal" aria-hidden="true">
+        <div class="modal-dialog-custom" role="dialog" aria-modal="true" aria-labelledby="addStudentTitle">
+            <div class="modal-header">
+                <h2 id="addStudentTitle" class="h5 mb-0">Add New Student</h2>
+                <button type="button" class="btn-close btn-close-white" aria-label="Close" id="close-add-student"></button>
+            </div>
+            <div class="modal-body">
+                <form class="row g-3" id="add-student-form" novalidate>
+                    <div class="col-12">
+                        <label for="student-name" class="form-label">Name</label>
+                        <input type="text" id="student-name" class="form-control" placeholder="Enter full name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="student-age" class="form-label">Age</label>
+                        <input type="number" id="student-age" class="form-control" min="1" placeholder="Age" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="student-class" class="form-label">Class</label>
+                        <input type="text" id="student-class" class="form-control" placeholder="Class / Grade" required>
+                    </div>
+                    <div class="col-12">
+                        <label for="student-image" class="form-label">Image URL</label>
+                        <input type="url" id="student-image" class="form-control" placeholder="https://example.com/photo.jpg">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="student-status" class="form-label">Status</label>
+                        <select id="student-status" class="form-select">
+                            <option value="Present">Present</option>
+                            <option value="Absent">Absent</option>
+                            <option value="Late">Late</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="student-remarks" class="form-label">Remarks</label>
+                        <input type="text" id="student-remarks" class="form-control" placeholder="Optional notes">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer d-flex justify-content-end gap-2">
+                <button type="button" class="btn btn-secondary btn-sm" id="cancel-add-student">Cancel</button>
+                <button type="button" class="btn btn-primary btn-sm" id="save-add-student">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile sidebar toggle and student search filter
+        (function () {
+            var toggle = document.getElementById('mobile-nav-toggle');
+            var sidebar = document.querySelector('.sidebar');
+            var search = document.getElementById('student-search');
+            var cards = document.querySelectorAll('.student-grid .card');
+            var openModalBtn = document.getElementById('add-student-btn');
+            var modal = document.getElementById('add-student-modal');
+            var closeModalBtn = document.getElementById('close-add-student');
+            var cancelBtn = document.getElementById('cancel-add-student');
+            var saveBtn = document.getElementById('save-add-student');
+            var form = document.getElementById('add-student-form');
+
+            function toggleModal(show) {
+                if (!modal) return;
+                modal.style.display = show ? 'flex' : 'none';
+                modal.setAttribute('aria-hidden', show ? 'false' : 'true');
+                if (show) {
+                    var firstInput = modal.querySelector('input, select');
+                    if (firstInput) firstInput.focus();
+                }
+            }
+
+            if (toggle && sidebar) {
+                toggle.addEventListener('click', function () {
+                    sidebar.classList.toggle('mobile-visible');
+                });
+            }
+
+            if (search) {
+                search.addEventListener('input', function () {
+                    var q = this.value.trim().toLowerCase();
+                    cards.forEach(function (c) {
+                        var text = c.innerText.toLowerCase();
+                        c.style.display = text.indexOf(q) !== -1 ? '' : 'none';
+                    });
+                });
+            }
+
+            if (openModalBtn) {
+                openModalBtn.addEventListener('click', function () {
+                    toggleModal(true);
+                });
+            }
+
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', function () {
+                    toggleModal(false);
+                });
+            }
+
+            if (cancelBtn) {
+                cancelBtn.addEventListener('click', function () {
+                    toggleModal(false);
+                });
+            }
+
+            if (saveBtn) {
+                saveBtn.addEventListener('click', function () {
+                    if (form) {
+                        form.reset();
+                    }
+                    toggleModal(false);
+                });
+            }
+
+            if (modal) {
+                modal.addEventListener('click', function (event) {
+                    if (event.target === modal) {
+                        toggleModal(false);
+                    }
+                });
+            }
+        })();
+    </script>
+</body>
+
+</html>
