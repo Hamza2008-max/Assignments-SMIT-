@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-soft">
+    <div class="container mb-5 app-shell">
+        <aside class="sidebar">
+            <div class="logo-row">
+                <img src="logo.svg" alt="Logo" class="dashboard-logo" />
+                <div>
+                    <strong>Student Portal</strong>
+                    <div class="text-muted small">Admin Panel</div>
+                </div>
+            </div>
+
+            <nav class="nav flex-column mt-4">
+                <a class="nav-link-custom" href="#">Overview</a>
+                <a class="nav-link-custom" href="#">Students</a>
+                <a class="nav-link-custom" href="#">Attendance</a>
+                <a class="nav-link-custom" href="#">Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main-area">
+            <div class="top-bar mb-4">
+                <div>
+                    <h2 class="h4 mb-0">Dashboard</h2>
+                    <p class="text-muted small mb-0">Attendance Overview And Latest Student Details.</p>
+                </div>
+                <div class="text-end">
+                    <p class="mb-1 text-muted">Logged In As <strong>Admin</strong></p>
+                    <a href="index.html" class="btn btn-outline-secondary btn-sm">Logout</a>
+                </div>
+            </div>
+
+            <section class="row g-4 mb-4">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="stat-card h-100">
+                        <div class="small text-uppercase text-muted">Total Students</div>
+                        <div class="stat-number">15</div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="stat-card h-100">
+                        <div class="small text-uppercase text-muted">Total Absents</div>
+                        <div class="stat-number text-danger">3</div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="stat-card h-100">
+                        <div class="small text-uppercase text-muted">Total Presents</div>
+                        <div class="stat-number text-success">12</div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="stat-card h-100">
+                        <div class="small text-uppercase text-muted">Classes Today</div>
+                        <div class="stat-number">4</div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div>
+                                <h3 class="h6 mb-1">Student Details</h3>
+                                <p class="text-muted small mb-0">Review Attendance For Today.</p>
+                            </div>
+                            <span class="badge rounded-pill" style="background:var(--primary);color:#fff;">Updated Now</span>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover table-custom align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Class</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Remarks</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>201</td>
+                                            <td>Ayesha Khan</td>
+                                            <td>10</td>
+                                            <td><span class="badge bg-success">Present</span></td>
+                                            <td>On Time</td>
+                                        </tr>
+                                        <tr>
+                                            <td>202</td>
+                                            <td>Rohan Sharma</td>
+                                            <td>10</td>
+                                            <td><span class="badge bg-danger">Absent</span></td>
+                                            <td>Family Reason</td>
+                                        </tr>
+                                        <tr>
+                                            <td>203</td>
+                                            <td>Priya Singh</td>
+                                            <td>9</td>
+                                            <td><span class="badge bg-success">Present</span></td>
+                                            <td>Participated Actively</td>
+                                        </tr>
+                                        <tr>
+                                            <td>204</td>
+                                            <td>Vikram Patel</td>
+                                            <td>9</td>
+                                            <td><span class="badge bg-success">Present</span></td>
+                                            <td>Excellent</td>
+                                        </tr>
+                                        <tr>
+                                            <td>205</td>
+                                            <td>Meera Das</td>
+                                            <td>10</td>
+                                            <td><span class="badge bg-danger">Absent</span></td>
+                                            <td>Medical</td>
+                                        </tr>
+                                        <tr>
+                                            <td>206</td>
+                                            <td>Arjun Verma</td>
+                                            <td>11</td>
+                                            <td><span class="badge bg-success">Present</span></td>
+                                            <td>On Time</td>
+                                        </tr>
+                                        <tr>
+                                            <td>207</td>
+                                            <td>Sana Iqbal</td>
+                                            <td>11</td>
+                                            <td><span class="badge bg-warning text-dark">Late</span></td>
+                                            <td>Traffic Delay</td>
+                                        </tr>
+                                        <tr>
+                                            <td>208</td>
+                                            <td>Daniel Mathew</td>
+                                            <td>12</td>
+                                            <td><span class="badge bg-success">Present</span></td>
+                                            <td>On Time</td>
+                                        </tr>
+                                        <tr>
+                                            <td>209</td>
+                                            <td>Fatima Noor</td>
+                                            <td>12</td>
+                                            <td><span class="badge bg-success">Present</span></td>
+                                            <td>Good</td>
+                                        </tr>
+                                        <tr>
+                                            <td>210</td>
+                                            <td>Mohit Kumar</td>
+                                            <td>10</td>
+                                            <td><span class="badge bg-success">Present</span></td>
+                                            <td>On Time</td>
+                                        </tr>
+                                        <tr>
+                                            <td>211</td>
+                                            <td>Nisha Rao</td>
+                                            <td>9</td>
+                                            <td><span class="badge bg-success">Present</span></td>
+                                            <td>Participated</td>
+                                        </tr>
+                                        <tr>
+                                            <td>212</td>
+                                            <td>Omar Ali</td>
+                                            <td>11</td>
+                                            <td><span class="badge bg-danger">Absent</span></td>
+                                            <td>Illness</td>
+                                        </tr>
+                                        <tr>
+                                            <td>213</td>
+                                            <td>Hina Patel</td>
+                                            <td>12</td>
+                                            <td><span class="badge bg-success">Present</span></td>
+                                            <td>Excellent</td>
+                                        </tr>
+                                        <tr>
+                                            <td>214</td>
+                                            <td>Ravi Shah</td>
+                                            <td>10</td>
+                                            <td><span class="badge bg-success">Present</span></td>
+                                            <td>On Time</td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
