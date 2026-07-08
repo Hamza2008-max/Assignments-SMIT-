@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-soft">
+  <div class="container py-4 detail-page">
+    <a href="dashboard.html" class="btn btn-outline-secondary btn-sm mb-4">← Back to Dashboard</a>
+
+    <section class="card shadow-sm border-0 detail-hero mb-4">
+      <div class="card-body p-4">
+        <div class="d-flex flex-column flex-md-row align-items-center gap-4">
+          <img id="student-photo" src="" alt="Student" class="profile-avatar" />
+          <div class="w-100">
+            <p class="text-muted mb-1">Student Profile</p>
+            <h1 id="student-name" class="h3 mb-2">Student Name</h1>
+            <p id="student-bio" class="text-muted mb-3">Student details will appear here.</p>
+
+            <div class="row g-3">
+              <div class="col-sm-6 col-lg-3">
+                <div class="detail-box">
+                  <span class="detail-label">Student ID</span>
+                  <strong id="student-id">-</strong>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-3">
+                <div class="detail-box">
+                  <span class="detail-label">Batch</span>
+                  <strong id="student-batch">-</strong>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-3">
+                <div class="detail-box">
+                  <span class="detail-label">Attendance</span>
+                  <strong id="student-attendance">-</strong>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-3">
+                <div class="detail-box">
+                  <span class="detail-label">Status</span>
+                  <strong id="student-status">-</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="row g-4 mb-4">
+      <div class="col-lg-6">
+        <section class="card shadow-sm border-0 h-100">
+          <div class="card-body p-4">
+            <h2 class="h5 mb-3">Personal Information</h2>
+            <div class="row g-3">
+              <div class="col-12 col-sm-6">
+                <div class="detail-box">
+                  <span class="detail-label">Email</span>
+                  <strong id="student-email">-</strong>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="detail-box">
+                  <span class="detail-label">Phone</span>
+                  <strong id="student-phone">-</strong>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="detail-box">
+                  <span class="detail-label">Department</span>
+                  <strong id="student-department">-</strong>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="detail-box">
+                  <span class="detail-label">Address</span>
+                  <strong id="student-address">-</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-lg-6">
+        <section class="card shadow-sm border-0 h-100">
+          <div class="card-body p-4">
+            <h2 class="h5 mb-3">Performance Overview</h2>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item px-0"><strong>Assignments:</strong> <span id="student-assignments">-</span></li>
+              <li class="list-group-item px-0"><strong>Quizzes:</strong> <span id="student-quizzes">-</span></li>
+              <li class="list-group-item px-0"><strong>Results:</strong> <span id="student-results">-</span></li>
+              <li class="list-group-item px-0"><strong>Current Grade:</strong> <span id="student-grade">-</span></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <nav class="detail-bottom-nav mb-4" aria-label="Student sections">
+      <button type="button" class="tab-link active" data-target="assignments">Assignments</button>
+      <button type="button" class="tab-link" data-target="quizzes">Quizzes</button>
+      <button type="button" class="tab-link" data-target="results">Results</button>
+    </nav>
+
+    <section id="assignments" class="card shadow-sm border-0 mb-4 detail-section active">
+      <div class="card-body p-4">
+        <h2 class="h5 mb-2">Assignments</h2>
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Due Date</th>
+                <th scope="col">Status</th>
+                <th scope="col">Score</th>
+              </tr>
+            </thead>
+            <tbody id="assignments-list">
+              <tr><td colspan="4" class="text-muted">Loading assignments...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="quizzes" class="card shadow-sm border-0 mb-4 detail-section">
+      <div class="card-body p-4">
+        <h2 class="h5 mb-2">Quizzes</h2>
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+              <tr>
+                <th scope="col">Quiz</th>
+                <th scope="col">Topic</th>
+                <th scope="col">Date</th>
+                <th scope="col">Marks</th>
+              </tr>
+            </thead>
+            <tbody id="quizzes-list">
+              <tr><td colspan="4" class="text-muted">Loading quizzes...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="results" class="card shadow-sm border-0 mb-5 detail-section">
+      <div class="card-body p-4">
+        <h2 class="h5 mb-2">Results</h2>
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+              <tr>
+                <th scope="col">Exam</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Obtained</th>
+                <th scope="col">Grade</th>
+              </tr>
+            </thead>
+            <tbody id="results-list">
+              <tr><td colspan="4" class="text-muted">Loading results...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const tabLinks = document.querySelectorAll('.tab-link');
+    const detailSections = document.querySelectorAll('.detail-section');
+
+    tabLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        const targetId = link.getAttribute('data-target');
+
+        tabLinks.forEach((item) => item.classList.remove('active'));
+        detailSections.forEach((section) => section.classList.remove('active'));
+
+        link.classList.add('active');
+        const activeSection = document.getElementById(targetId);
+        if (activeSection) {
+          activeSection.classList.add('active');
+        }
+      });
+    });
+
+    const students = [
+      { id: 201, name: 'Ayesha Khan', photo: 'https://randomuser.me/api/portraits/women/68.jpg', batch: 'Batch 2024', attendance: '92%', status: 'Active', email: 'ayesha@example.com', phone: '+92 300 1111111', department: 'Computer Science', address: 'Lahore, Pakistan', bio: 'A dependable student with excellent class participation and strong project work.', assignments: 'Completed 8/10 assignments with a 90% average.', quizzes: 'Scored 88% in the latest quiz cycle.', results: 'Semester result trend is improving steadily with an overall grade of A.', grade: 'A' },
+      { id: 202, name: 'Rohan Sharma', photo: 'https://randomuser.me/api/portraits/men/45.jpg', batch: 'Batch 2024', attendance: '88%', status: 'Needs Support', email: 'rohan@example.com', phone: '+92 301 2222222', department: 'Business Studies', address: 'Karachi, Pakistan', bio: 'Shows good potential and responds well to guidance during weekly reviews.', assignments: 'Completed 7/10 assignments and is improving in practical work.', quizzes: 'Answered 82% of quiz questions correctly in the last test.', results: 'Current average sits at a solid B+ with room to improve.', grade: 'B+' },
+      { id: 203, name: 'Priya Singh', photo: 'https://randomuser.me/api/portraits/women/65.jpg', batch: 'Batch 2024', attendance: '95%', status: 'Active', email: 'priya@example.com', phone: '+92 302 3333333', department: 'Economics', address: 'Islamabad, Pakistan', bio: 'An organized learner who regularly contributes to classroom discussions.', assignments: 'Submitted all assignments on time with strong quality.', quizzes: 'Maintained a 94% average across recent quizzes.', results: 'Excellent semester performance with a top grade of A+', grade: 'A+' },
+      { id: 204, name: 'Vikram Patel', photo: 'https://randomuser.me/api/portraits/men/57.jpg', batch: 'Batch 2024', attendance: '84%', status: 'Active', email: 'vikram@example.com', phone: '+92 303 4444444', department: 'Mechanical', address: 'Peshawar, Pakistan', bio: 'A focused student with steady progress in academic tasks.', assignments: 'Completed 6/10 assignments and is catching up well.', quizzes: 'Recent quiz performance improved to 80%.', results: 'Overall result trend is encouraging and balanced.', grade: 'B' },
+      { id: 205, name: 'Meera Das', photo: 'https://randomuser.me/api/portraits/women/44.jpg', batch: 'Batch 2024', attendance: '90%', status: 'On Leave', email: 'meera@example.com', phone: '+92 304 5555555', department: 'Arts & Design', address: 'Quetta, Pakistan', bio: 'A creative learner who stays engaged when present in class.', assignments: 'Submitted 8/10 assignments and shows excellent presentation skills.', quizzes: 'Average quiz score is 87%.', results: 'Maintaining a solid academic record with upcoming catch-up work.', grade: 'A-' },
+      { id: 206, name: 'Arjun Verma', photo: 'https://randomuser.me/api/portraits/men/12.jpg', batch: 'Batch 2024', attendance: '87%', status: 'Active', email: 'arjun@example.com', phone: '+92 305 6666666', department: 'Physics', address: 'Hyderabad, Pakistan', bio: 'A curious student who enjoys solving analytical problems.', assignments: 'Completed 7/10 assignments with steady effort.', quizzes: 'Scored 84% in the latest assessment.', results: 'Result profile is consistent with a B grade average.', grade: 'B' },
+      { id: 207, name: 'Sana Iqbal', photo: 'https://randomuser.me/api/portraits/women/21.jpg', batch: 'Batch 2024', attendance: '91%', status: 'Active', email: 'sana@example.com', phone: '+92 306 7777777', department: 'English', address: 'Multan, Pakistan', bio: 'A confident communicator with strong writing and presentation skills.', assignments: 'Completed all submitted tasks with excellent quality.', quizzes: 'Latest quiz score reached 92%.', results: 'A strong semester result profile with consistent A grades.', grade: 'A' },
+      { id: 208, name: 'Daniel Mathew', photo: 'https://randomuser.me/api/portraits/men/32.jpg', batch: 'Batch 2024', attendance: '86%', status: 'Active', email: 'daniel@example.com', phone: '+92 307 8888888', department: 'Computer Science', address: 'Faisalabad, Pakistan', bio: 'Shows strong technical skills and enthusiasm for hands-on learning.', assignments: 'Submitted 7/10 assignments and is improving quickly.', quizzes: 'Latest quiz average is 81%.', results: 'Performance is stable with a B grade target.', grade: 'B' },
+      { id: 209, name: 'Fatima Noor', photo: 'https://randomuser.me/api/portraits/women/34.jpg', batch: 'Batch 2024', attendance: '93%', status: 'Active', email: 'fatima@example.com', phone: '+92 308 9999999', department: 'Mathematics', address: 'Sukkur, Pakistan', bio: 'Known for precision, discipline, and excellent academic focus.', assignments: 'Completed all assignments and performed consistently.', quizzes: 'Average quiz score is 95%.', results: 'Excellent results with a clear A grade trend.', grade: 'A' },
+      { id: 210, name: 'Mohit Kumar', photo: 'https://randomuser.me/api/portraits/men/77.jpg', batch: 'Batch 2024', attendance: '89%', status: 'Active', email: 'mohit@example.com', phone: '+92 309 1010101', department: 'History', address: 'Rawalpindi, Pakistan', bio: 'A calm and thoughtful student who participates with maturity.', assignments: 'Completed 8/10 assignments with good quality.', quizzes: 'Average quiz score is 86%.', results: 'Steady academic performance with balanced results.', grade: 'B+' },
+      { id: 211, name: 'Nisha Rao', photo: 'https://randomuser.me/api/portraits/women/55.jpg', batch: 'Batch 2024', attendance: '85%', status: 'Active', email: 'nisha@example.com', phone: '+92 310 1212121', department: 'Biology', address: 'Larkana, Pakistan', bio: 'A diligent student who works hard to keep up with practical labs.', assignments: 'Submitted 7/10 assignments with consistent effort.', quizzes: 'Scored 83% in the most recent quiz.', results: 'Good overall result trend and improving confidence.', grade: 'B' },
+      { id: 212, name: 'Omar Ali', photo: 'https://randomuser.me/api/portraits/men/88.jpg', batch: 'Batch 2024', attendance: '94%', status: 'Active', email: 'omar@example.com', phone: '+92 311 1313131', department: 'Chemistry', address: 'Gujranwala, Pakistan', bio: 'A reliable learner who contributes thoughtfully during lab sessions.', assignments: 'Completed all assigned tasks with strong accuracy.', quizzes: 'Maintained a 93% average in quizzes.', results: 'Top-performing student with an A grade record.', grade: 'A' },
+      { id: 213, name: 'Hina Patel', photo: 'https://randomuser.me/api/portraits/women/12.jpg', batch: 'Batch 2024', attendance: '83%', status: 'Active', email: 'hina@example.com', phone: '+92 312 1414141', department: 'Psychology', address: 'Sialkot, Pakistan', bio: 'Shows good insight and clear understanding during discussions.', assignments: 'Submitted 6/10 assignments and is improving steadily.', quizzes: 'Recent quiz score is 79%.', results: 'Progress is positive and the trend is upward.', grade: 'B-' },
+      { id: 214, name: 'Ravi Shah', photo: 'https://randomuser.me/api/portraits/men/29.jpg', batch: 'Batch 2024', attendance: '90%', status: 'Active', email: 'ravi@example.com', phone: '+92 313 1515151', department: 'Marketing', address: 'Bahawalpur, Pakistan', bio: 'A motivated learner with strong interest in practical activities.', assignments: 'Completed 8/10 assignments and keeps improving.', quizzes: 'Scored 88% in the latest quiz.', results: 'Solid results with steady academic growth.', grade: 'A-' }
+    ];
+
+    const params = new URLSearchParams(window.location.search);
+    const id = Number(params.get('id')) || 201;
+    const student = students.find(item => item.id === id) || students[0];
+
+    document.getElementById('student-photo').src = student.photo;
+    document.getElementById('student-photo').alt = student.name;
+    document.getElementById('student-name').textContent = student.name;
+    document.getElementById('student-bio').textContent = student.bio;
+    document.getElementById('student-id').textContent = student.id;
+    document.getElementById('student-batch').textContent = student.batch;
+    document.getElementById('student-attendance').textContent = student.attendance;
+    document.getElementById('student-status').textContent = student.status;
+    document.getElementById('student-email').textContent = student.email;
+    document.getElementById('student-phone').textContent = student.phone;
+    document.getElementById('student-department').textContent = student.department;
+    document.getElementById('student-address').textContent = student.address;
+    document.getElementById('student-assignments').textContent = student.assignments;
+    document.getElementById('student-quizzes').textContent = student.quizzes;
+    document.getElementById('student-results').textContent = student.results;
+    document.getElementById('student-grade').textContent = student.grade;
+
+    const assignmentsList = document.getElementById('assignments-list');
+    const quizzesList = document.getElementById('quizzes-list');
+    const resultsList = document.getElementById('results-list');
+
+    assignmentsList.innerHTML = `
+      <tr><td>Web Development Task</td><td>10 Jul</td><td><span class="badge bg-success">Submitted</span></td><td>88/100</td></tr>
+      <tr><td>Bootstrap Practice</td><td>12 Jul</td><td><span class="badge bg-warning text-dark">Pending</span></td><td>—</td></tr>
+      <tr><td>Project Proposal</td><td>15 Jul</td><td><span class="badge bg-success">Submitted</span></td><td>92/100</td></tr>
+    `;
+
+    quizzesList.innerHTML = `
+      <tr><td>Quiz 1</td><td>HTML Basics</td><td>02 Jul</td><td>18/20</td></tr>
+      <tr><td>Quiz 2</td><td>CSS Styling</td><td>05 Jul</td><td>16/20</td></tr>
+      <tr><td>Quiz 3</td><td>JavaScript Essentials</td><td>08 Jul</td><td>19/20</td></tr>
+    `;
+
+    resultsList.innerHTML = `
+      <tr><td>Mid Term</td><td>Web Development</td><td>78/100</td><td>B+</td></tr>
+      <tr><td>Final Quiz</td><td>UI Design</td><td>91/100</td><td>A</td></tr>
+      <tr><td>Lab Assessment</td><td>Bootstrap</td><td>85/100</td><td>A-</td></tr>
+    `;
+
+    document.title = `${student.name} | Student Details`;
+  </script>
+</body>
+</html>
