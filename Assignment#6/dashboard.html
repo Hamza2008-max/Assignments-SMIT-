@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-soft">
+    <a href="#dashboard-view" class="skip-link">Skip to content</a>
+    <div class="container mb-5 app-shell">
+        <aside class="sidebar">
+            <div class="logo-row">
+                <img src="logo.svg" alt="Logo" class="dashboard-logo" />
+                <div>
+                    <strong>Student Portal</strong>
+                    <div class="text-muted small">Admin Panel</div>
+                </div>
+            </div>
+
+            <nav class="nav flex-column mt-4" aria-label="Main Navigation">
+                <a class="nav-link-custom" href="#student-ids" aria-label="Student ID">Student ID</a>
+                <a class="nav-link-custom" href="#attendance" aria-label="Attendance">Attendance</a>
+            </nav>
+        </aside>
+
+        <main class="main-area">
+            <div id="dashboard-view">
+                <div class="top-bar mb-4">
+                    <div class="d-flex align-items-center gap-3">
+                        <button id="mobile-nav-toggle" class="btn btn-outline-secondary btn-sm mobile-nav-btn"
+                            aria-label="Toggle navigation">&#9776;</button>
+                        <div>
+                            <h2 class="h4 mb-0">Dashboard</h2>
+                            <p class="text-muted small mb-0">Attendance Overview And Latest Student Details.</p>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <p class="mb-1 text-muted">Logged In As <strong>Admin</strong></p>
+                        <a href="Login.html" class="btn btn-outline-secondary btn-sm">Logout</a>
+                    </div>
+                </div>
+
+                <section class="student-profile-card card shadow-sm border-0 mb-4">
+                    <div class="card-body p-4">
+                        <h3 class="h5 mb-2">Student Profile Explorer</h3>
+                        <p class="text-muted mb-0">Choose any student card below to open its own details section on this page.</p>
+                    </div>
+                </section>
+
+                <section class="row g-4 mb-4">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="stat-card h-100">
+                            <div class="small text-uppercase text-muted">Total Students</div>
+                            <div class="stat-number">14</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="stat-card h-100">
+                            <div class="small text-uppercase text-muted">Total Absents</div>
+                            <div class="stat-number text-danger">3</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="stat-card h-100">
+                            <div class="small text-uppercase text-muted">Total Presents</div>
+                            <div class="stat-number text-success">12</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="stat-card h-100">
+                            <div class="small text-uppercase text-muted">Classes Today</div>
+                            <div class="stat-number">4</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Student IDs Section (pics + names + IDs) -->
+            <section id="student-ids" class="mb-4">
+                <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+                    <div>
+                        <h3 class="h5 mb-0">Student IDs</h3>
+                        <p class="text-muted small mb-0">Manage the student roster and add new learners.</p>
+                    </div>
+                    <a href="student-details.html" class="btn btn-primary btn-sm">Student Details</a>
+                </div>
+
+                <div class="card shadow-sm border-0 mb-4">
+                    <div class="card-body p-4">
+                        <div class="row g-3 align-items-end">
+                            <div class="col-md-6">
+                                <label for="student-search" class="form-label">Search</label>
+                                <input id="student-search" class="form-control" placeholder="Search by name or ID" aria-label="Search students" />
+                            </div>
+                            <div class="col-md-3">
+                                <label for="student-batch" class="form-label">Batch</label>
+                                <select id="student-batch" class="form-select">
+                                    <option selected>All Batches</option>
+                                    <option>Batch 2023</option>
+                                    <option>Batch 2024</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="filterStudentStatus" class="form-label">Status</label>
+                                <select id="filterStudentStatus" class="form-select">
+                                    <option selected>All Statuses</option>
+                                    <option>Active</option>
+                                    <option>On Leave</option>
+                                    <option>Needs Support</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-flex flex-wrap gap-2">
+                                    <button type="button" class="btn btn-outline-secondary btn-sm">Apply Filters</button>
+                                    <a href="#student-add-form" class="btn btn-primary btn-sm">Add Student</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-3 student-grid">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card student-card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center p-3">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ayesha Khan" loading="lazy" class="student-img mb-2" />
+                                <div class="fw-bold">Ayesha Khan</div>
+                                <div class="text-muted small">ID: 201</div>
+                                <span class="badge bg-success mt-2">Active</span>
+                                <p class="small text-muted mb-2 mt-3">Attendance 92% &bull; Batch 2024</p>
+                                <a href="student-details.html" class="btn btn-outline-primary btn-sm w-100">Student Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card student-card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center p-3">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Rohan Sharma" loading="lazy" class="student-img mb-2" />
+                                <div class="fw-bold">Rohan Sharma</div>
+                                <div class="text-muted small">ID: 202</div>
+                                <span class="badge bg-warning text-dark mt-2">Needs Support</span>
+                                <p class="small text-muted mb-2 mt-3">Attendance 88% &bull; Batch 2024</p>
+                                <a href="student-details.html" class="btn btn-outline-primary btn-sm w-100">Student Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card student-card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center p-3">
+                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Priya Singh" loading="lazy" class="student-img mb-2" />
+                                <div class="fw-bold">Priya Singh</div>
+                                <div class="text-muted small">ID: 203</div>
+                                <span class="badge bg-success mt-2">Active</span>
+                                <p class="small text-muted mb-2 mt-3">Attendance 95% &bull; Batch 2023</p>
+                                <a href="student-details.html" class="btn btn-outline-primary btn-sm w-100">Student Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card student-card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center p-3">
+                                <img src="https://randomuser.me/api/portraits/men/57.jpg" alt="Vikram Patel" loading="lazy" class="student-img mb-2" />
+                                <div class="fw-bold">Vikram Patel</div>
+                                <div class="text-muted small">ID: 204</div>
+                                <span class="badge bg-success mt-2">Active</span>
+                                <p class="small text-muted mb-2 mt-3">Attendance 84% &bull; Batch 2024</p>
+                                <a href="student-details.html" class="btn btn-outline-primary btn-sm w-100">Student Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card student-card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center p-3">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Meera Das" loading="lazy" class="student-img mb-2" />
+                                <div class="fw-bold">Meera Das</div>
+                                <div class="text-muted small">ID: 205</div>
+                                <span class="badge bg-secondary mt-2">On Leave</span>
+                                <p class="small text-muted mb-2 mt-3">Attendance 90% &bull; Batch 2023</p>
+                                <a href="student-details.html" class="btn btn-outline-primary btn-sm w-100">Student Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card student-card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center p-3">
+                                <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="Arjun Verma" loading="lazy" class="student-img mb-2" />
+                                <div class="fw-bold">Arjun Verma</div>
+                                <div class="text-muted small">ID: 206</div>
+                                <span class="badge bg-success mt-2">Active</span>
+                                <p class="small text-muted mb-2 mt-3">Attendance 87% &bull; Batch 2024</p>
+                                <a href="student-details.html" class="btn btn-outline-primary btn-sm w-100">Student Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card student-card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center p-3">
+                                <img src="https://randomuser.me/api/portraits/women/21.jpg" alt="Sana Iqbal" loading="lazy" class="student-img mb-2" />
+                                <div class="fw-bold">Sana Iqbal</div>
+                                <div class="text-muted small">ID: 207</div>
+                                <span class="badge bg-success mt-2">Active</span>
+                                <p class="small text-muted mb-2 mt-3">Attendance 91% &bull; Batch 2023</p>
+                                <a href="student-details.html" class="btn btn-outline-primary btn-sm w-100">Student Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card student-card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center p-3">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Daniel Mathew" loading="lazy" class="student-img mb-2" />
+                                <div class="fw-bold">Daniel Mathew</div>
+                                <div class="text-muted small">ID: 208</div>
+                                <span class="badge bg-success mt-2">Active</span>
+                                <p class="small text-muted mb-2 mt-3">Attendance 86% &bull; Batch 2024</p>
+                                <a href="student-details.html" class="btn btn-outline-primary btn-sm w-100">Student Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <section id="student-add-form" class="card shadow-sm border-0 mt-4">
+                    <div class="card-body p-4">
+                        <h3 class="h6 mb-3">Add Student</h3>
+                        <form class="row g-3">
+                            <div class="col-md-6">
+                                <label for="addStudentName" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="addStudentName" placeholder="Student full name" />
+                            </div>
+                            <div class="col-md-6">
+                                <label for="addStudentBatch" class="form-label">Batch</label>
+                                <input type="text" class="form-control" id="addStudentBatch" placeholder="Batch 2024" />
+                            </div>
+                            <div class="col-md-6">
+                                <label for="addStudentEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="addStudentEmail" placeholder="student@example.com" />
+                            </div>
+                            <div class="col-md-6">
+                                <label for="addStudentStatus" class="form-label">Status</label>
+                                <select class="form-select" id="addStudentStatus">
+                                    <option selected>Active</option>
+                                    <option>On Leave</option>
+                                    <option>Needs Support</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </section>
+
+            <section id="attendance" class="mb-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div>
+                                <h3 class="h6 mb-1">Student Details</h3>
+                                <p class="text-muted small mb-0">Review Attendance For Today.</p>
+                            </div>
+                            <span class="badge rounded-pill" style="background:var(--primary);color:#fff;">Updated
+                                Now</span>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover table-custom align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Class</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Remarks</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>201</td>
+                                        <td>Ayesha Khan</td>
+                                        <td>10</td>
+                                        <td><span class="badge bg-success">Present</span></td>
+                                        <td>On Time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>202</td>
+                                        <td>Rohan Sharma</td>
+                                        <td>10</td>
+                                        <td><span class="badge bg-danger">Absent</span></td>
+                                        <td>Family Reason</td>
+                                    </tr>
+                                    <tr>
+                                        <td>203</td>
+                                        <td>Priya Singh</td>
+                                        <td>9</td>
+                                        <td><span class="badge bg-success">Present</span></td>
+                                        <td>Participated Actively</td>
+                                    </tr>
+                                    <tr>
+                                        <td>204</td>
+                                        <td>Vikram Patel</td>
+                                        <td>9</td>
+                                        <td><span class="badge bg-success">Present</span></td>
+                                        <td>Excellent</td>
+                                    </tr>
+                                    <tr>
+                                        <td>205</td>
+                                        <td>Meera Das</td>
+                                        <td>10</td>
+                                        <td><span class="badge bg-danger">Absent</span></td>
+                                        <td>Medical</td>
+                                    </tr>
+                                    <tr>
+                                        <td>206</td>
+                                        <td>Arjun Verma</td>
+                                        <td>11</td>
+                                        <td><span class="badge bg-success">Present</span></td>
+                                        <td>On Time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>207</td>
+                                        <td>Sana Iqbal</td>
+                                        <td>11</td>
+                                        <td><span class="badge bg-warning text-dark">Late</span></td>
+                                        <td>Traffic Delay</td>
+                                    </tr>
+                                    <tr>
+                                        <td>208</td>
+                                        <td>Daniel Mathew</td>
+                                        <td>12</td>
+                                        <td><span class="badge bg-success">Present</span></td>
+                                        <td>On Time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>209</td>
+                                        <td>Fatima Noor</td>
+                                        <td>12</td>
+                                        <td><span class="badge bg-success">Present</span></td>
+                                        <td>Good</td>
+                                    </tr>
+                                    <tr>
+                                        <td>210</td>
+                                        <td>Mohit Kumar</td>
+                                        <td>10</td>
+                                        <td><span class="badge bg-success">Present</span></td>
+                                        <td>On Time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>211</td>
+                                        <td>Nisha Rao</td>
+                                        <td>9</td>
+                                        <td><span class="badge bg-success">Present</span></td>
+                                        <td>Participated</td>
+                                    </tr>
+                                    <tr>
+                                        <td>212</td>
+                                        <td>Omar Ali</td>
+                                        <td>11</td>
+                                        <td><span class="badge bg-danger">Absent</span></td>
+                                        <td>Illness</td>
+                                    </tr>
+                                    <tr>
+                                        <td>213</td>
+                                        <td>Hina Patel</td>
+                                        <td>12</td>
+                                        <td><span class="badge bg-success">Present</span></td>
+                                        <td>Excellent</td>
+                                    </tr>
+                                    <tr>
+                                        <td>214</td>
+                                        <td>Ravi Shah</td>
+                                        <td>10</td>
+                                        <td><span class="badge bg-success">Present</span></td>
+                                        <td>On Time</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="modal-overlay" id="add-student-modal" aria-hidden="true">
+                <div class="modal-dialog-custom" role="dialog" aria-modal="true" aria-labelledby="addStudentTitle">
+                    <div class="modal-header">
+                        <h2 id="addStudentTitle" class="h5 mb-0">Add New Student</h2>
+                        <button type="button" class="btn-close btn-close-white" aria-label="Close"
+                            id="close-add-student"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="row g-3" id="add-student-form" novalidate>
+                            <div class="col-12">
+                                <label for="student-name" class="form-label">Name</label>
+                                <input type="text" id="student-name" class="form-control" placeholder="Enter full name"
+                                    required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="student-age" class="form-label">Age</label>
+                                <input type="number" id="student-age" class="form-control" min="1" placeholder="Age"
+                                    required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="student-class" class="form-label">Class</label>
+                                <input type="text" id="student-class" class="form-control" placeholder="Class / Grade"
+                                    required>
+                            </div>
+                            <div class="col-12">
+                                <label for="student-image" class="form-label">Image URL</label>
+                                <input type="url" id="student-image" class="form-control"
+                                    placeholder="https://example.com/photo.jpg">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="attendanceStatus" class="form-label">Status</label>
+                                <select id="attendanceStatus" class="form-select">
+                                    <option value="Present">Present</option>
+                                    <option value="Absent">Absent</option>
+                                    <option value="Late">Late</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="student-remarks" class="form-label">Remarks</label>
+                                <input type="text" id="student-remarks" class="form-control"
+                                    placeholder="Optional notes">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-end gap-2">
+                        <button type="button" class="btn btn-secondary btn-sm" id="cancel-add-student">Cancel</button>
+                        <button type="button" class="btn btn-primary btn-sm" id="save-add-student">Save</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="studentModal201" tabindex="-1" aria-labelledby="studentModal201Label" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content border-0 shadow">
+                        <div class="modal-header">
+                            <div>
+                                <h5 class="modal-title" id="studentModal201Label">Ayesha Khan</h5>
+                                <p class="text-muted small mb-0">Student details</p>
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-md-4 text-center">
+                                    <img src="https://randomuser.me/api/portraits/women/68.jpg" class="img-fluid rounded-circle student-modal-img" alt="Ayesha Khan" />
+                                </div>
+                                <div class="col-md-8">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item px-0"><strong>ID:</strong> 201</li>
+                                        <li class="list-group-item px-0"><strong>Batch:</strong> Batch 2024</li>
+                                        <li class="list-group-item px-0"><strong>Email:</strong> ayesha@example.com</li>
+                                        <li class="list-group-item px-0"><strong>Attendance:</strong> 92%</li>
+                                        <li class="list-group-item px-0"><strong>Status:</strong> <span class="badge text-bg-success">Active</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal" data-bs-toggle="offcanvas" data-bs-target="#editStudentOffcanvas" aria-controls="editStudentOffcanvas">Edit Student</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="studentModal202" tabindex="-1" aria-labelledby="studentModal202Label" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content border-0 shadow">
+                        <div class="modal-header">
+                            <div>
+                                <h5 class="modal-title" id="studentModal202Label">Rohan Sharma</h5>
+                                <p class="text-muted small mb-0">Student details</p>
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-md-4 text-center">
+                                    <img src="https://randomuser.me/api/portraits/men/45.jpg" class="img-fluid rounded-circle student-modal-img" alt="Rohan Sharma" />
+                                </div>
+                                <div class="col-md-8">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item px-0"><strong>ID:</strong> 202</li>
+                                        <li class="list-group-item px-0"><strong>Batch:</strong> Batch 2024</li>
+                                        <li class="list-group-item px-0"><strong>Email:</strong> rohan@example.com</li>
+                                        <li class="list-group-item px-0"><strong>Attendance:</strong> 88%</li>
+                                        <li class="list-group-item px-0"><strong>Status:</strong> <span class="badge text-bg-warning">Needs Support</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal" data-bs-toggle="offcanvas" data-bs-target="#editStudentOffcanvas" aria-controls="editStudentOffcanvas">Edit Student</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="studentModal203" tabindex="-1" aria-labelledby="studentModal203Label" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content border-0 shadow">
+                        <div class="modal-header">
+                            <div>
+                                <h5 class="modal-title" id="studentModal203Label">Priya Singh</h5>
+                                <p class="text-muted small mb-0">Student details</p>
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-md-4 text-center">
+                                    <img src="https://randomuser.me/api/portraits/women/65.jpg" class="img-fluid rounded-circle student-modal-img" alt="Priya Singh" />
+                                </div>
+                                <div class="col-md-8">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item px-0"><strong>ID:</strong> 203</li>
+                                        <li class="list-group-item px-0"><strong>Batch:</strong> Batch 2024</li>
+                                        <li class="list-group-item px-0"><strong>Email:</strong> priya@example.com</li>
+                                        <li class="list-group-item px-0"><strong>Attendance:</strong> 95%</li>
+                                        <li class="list-group-item px-0"><strong>Status:</strong> <span class="badge text-bg-success">Active</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal" data-bs-toggle="offcanvas" data-bs-target="#editStudentOffcanvas" aria-controls="editStudentOffcanvas">Edit Student</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="studentModal204" tabindex="-1" aria-labelledby="studentModal204Label" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content border-0 shadow">
+                        <div class="modal-header">
+                            <div>
+                                <h5 class="modal-title" id="studentModal204Label">Vikram Patel</h5>
+                                <p class="text-muted small mb-0">Student details</p>
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-md-4 text-center">
+                                    <img src="https://randomuser.me/api/portraits/men/57.jpg" class="img-fluid rounded-circle student-modal-img" alt="Vikram Patel" />
+                                </div>
+                                <div class="col-md-8">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item px-0"><strong>ID:</strong> 204</li>
+                                        <li class="list-group-item px-0"><strong>Batch:</strong> Batch 2024</li>
+                                        <li class="list-group-item px-0"><strong>Email:</strong> vikram@example.com</li>
+                                        <li class="list-group-item px-0"><strong>Attendance:</strong> 84%</li>
+                                        <li class="list-group-item px-0"><strong>Status:</strong> <span class="badge text-bg-success">Active</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal" data-bs-toggle="offcanvas" data-bs-target="#editStudentOffcanvas" aria-controls="editStudentOffcanvas">Edit Student</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="studentModal205" tabindex="-1" aria-labelledby="studentModal205Label" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content border-0 shadow">
+                        <div class="modal-header">
+                            <div>
+                                <h5 class="modal-title" id="studentModal205Label">Meera Das</h5>
+                                <p class="text-muted small mb-0">Student details</p>
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-md-4 text-center">
+                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="img-fluid rounded-circle student-modal-img" alt="Meera Das" />
+                                </div>
+                                <div class="col-md-8">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item px-0"><strong>ID:</strong> 205</li>
+                                        <li class="list-group-item px-0"><strong>Batch:</strong> Batch 2024</li>
+                                        <li class="list-group-item px-0"><strong>Email:</strong> meera@example.com</li>
+                                        <li class="list-group-item px-0"><strong>Attendance:</strong> 90%</li>
+                                        <li class="list-group-item px-0"><strong>Status:</strong> <span class="badge text-bg-info">On Leave</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal" data-bs-toggle="offcanvas" data-bs-target="#editStudentOffcanvas" aria-controls="editStudentOffcanvas">Edit Student</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="studentModal206" tabindex="-1" aria-labelledby="studentModal206Label" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content border-0 shadow">
+                        <div class="modal-header">
+                            <div>
+                                <h5 class="modal-title" id="studentModal206Label">Arjun Verma</h5>
+                                <p class="text-muted small mb-0">Student details</p>
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-md-4 text-center">
+                                    <img src="https://randomuser.me/api/portraits/men/12.jpg" class="img-fluid rounded-circle student-modal-img" alt="Arjun Verma" />
+                                </div>
+                                <div class="col-md-8">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item px-0"><strong>ID:</strong> 206</li>
+                                        <li class="list-group-item px-0"><strong>Batch:</strong> Batch 2024</li>
+                                        <li class="list-group-item px-0"><strong>Email:</strong> arjun@example.com</li>
+                                        <li class="list-group-item px-0"><strong>Attendance:</strong> 87%</li>
+                                        <li class="list-group-item px-0"><strong>Status:</strong> <span class="badge text-bg-success">Active</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal" data-bs-toggle="offcanvas" data-bs-target="#editStudentOffcanvas" aria-controls="editStudentOffcanvas">Edit Student</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="studentModal207" tabindex="-1" aria-labelledby="studentModal207Label" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content border-0 shadow">
+                        <div class="modal-header">
+                            <div>
+                                <h5 class="modal-title" id="studentModal207Label">Sana Iqbal</h5>
+                                <p class="text-muted small mb-0">Student details</p>
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-md-4 text-center">
+                                    <img src="https://randomuser.me/api/portraits/women/21.jpg" class="img-fluid rounded-circle student-modal-img" alt="Sana Iqbal" />
+                                </div>
+                                <div class="col-md-8">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item px-0"><strong>ID:</strong> 207</li>
+                                        <li class="list-group-item px-0"><strong>Batch:</strong> Batch 2024</li>
+                                        <li class="list-group-item px-0"><strong>Email:</strong> sana@example.com</li>
+                                        <li class="list-group-item px-0"><strong>Attendance:</strong> 91%</li>
+                                        <li class="list-group-item px-0"><strong>Status:</strong> <span class="badge text-bg-success">Active</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal" data-bs-toggle="offcanvas" data-bs-target="#editStudentOffcanvas" aria-controls="editStudentOffcanvas">Edit Student</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="studentModal208" tabindex="-1" aria-labelledby="studentModal208Label" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content border-0 shadow">
+                        <div class="modal-header">
+                            <div>
+                                <h5 class="modal-title" id="studentModal208Label">Daniel Mathew</h5>
+                                <p class="text-muted small mb-0">Student details</p>
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-md-4 text-center">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" class="img-fluid rounded-circle student-modal-img" alt="Daniel Mathew" />
+                                </div>
+                                <div class="col-md-8">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item px-0"><strong>ID:</strong> 208</li>
+                                        <li class="list-group-item px-0"><strong>Batch:</strong> Batch 2024</li>
+                                        <li class="list-group-item px-0"><strong>Email:</strong> daniel@example.com</li>
+                                        <li class="list-group-item px-0"><strong>Attendance:</strong> 86%</li>
+                                        <li class="list-group-item px-0"><strong>Status:</strong> <span class="badge text-bg-success">Active</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal" data-bs-toggle="offcanvas" data-bs-target="#editStudentOffcanvas" aria-controls="editStudentOffcanvas">Edit Student</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="studentModal209" tabindex="-1" aria-labelledby="studentModal209Label" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content border-0 shadow">
+                        <div class="modal-header">
+                            <div>
+                                <h5 class="modal-title" id="studentModal209Label">Fatima Noor</h5>
+                                <p class="text-muted small mb-0">Student details</p>
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-md-4 text-center">
+                                    <img src="https://randomuser.me/api/portraits/women/34.jpg" class="img-fluid rounded-circle student-modal-img" alt="Fatima Noor" />
+                                </div>
+                                <div class="col-md-8">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item px-0"><strong>ID:</strong> 209</li>
+                                        <li class="list-group-item px-0"><strong>Batch:</strong> Batch 2024</li>
+                                        <li class="list-group-item px-0"><strong>Email:</strong> fatima@example.com</li>
+                                        <li class="list-group-item px-0"><strong>Attendance:</strong> 93%</li>
+                                        <li class="list-group-item px-0"><strong>Status:</strong> <span class="badge text-bg-success">Active</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal" data-bs-toggle="offcanvas" data-bs-target="#editStudentOffcanvas" aria-controls="editStudentOffcanvas">Edit Student</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="studentModal210" tabindex="-1" aria-labelledby="studentModal210Label" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content border-0 shadow">
+                        <div class="modal-header">
+                            <div>
+                                <h5 class="modal-title" id="studentModal210Label">Mohit Kumar</h5>
+                                <p class="text-muted small mb-0">Student details</p>
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-md-4 text-center">
+                                    <img src="https://randomuser.me/api/portraits/men/77.jpg" class="img-fluid rounded-circle student-modal-img" alt="Mohit Kumar" />
+                                </div>
+                                <div class="col-md-8">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item px-0"><strong>ID:</strong> 210</li>
+                                        <li class="list-group-item px-0"><strong>Batch:</strong> Batch 2024</li>
+                                        <li class="list-group-item px-0"><strong>Email:</strong> mohit@example.com</li>
+                                        <li class="list-group-item px-0"><strong>Attendance:</strong> 89%</li>
+                                        <li class="list-group-item px-0"><strong>Status:</strong> <span class="badge text-bg-success">Active</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal" data-bs-toggle="offcanvas" data-bs-target="#editStudentOffcanvas" aria-controls="editStudentOffcanvas">Edit Student</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="studentModal211" tabindex="-1" aria-labelledby="studentModal211Label" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content border-0 shadow">
+                        <div class="modal-header">
+                            <div>
+                                <h5 class="modal-title" id="studentModal211Label">Nisha Rao</h5>
+                                <p class="text-muted small mb-0">Student details</p>
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-md-4 text-center">
+                                    <img src="https://randomuser.me/api/portraits/women/55.jpg" class="img-fluid rounded-circle student-modal-img" alt="Nisha Rao" />
+                                </div>
+                                <div class="col-md-8">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item px-0"><strong>ID:</strong> 211</li>
+                                        <li class="list-group-item px-0"><strong>Batch:</strong> Batch 2024</li>
+                                        <li class="list-group-item px-0"><strong>Email:</strong> nisha@example.com</li>
+                                        <li class="list-group-item px-0"><strong>Attendance:</strong> 85%</li>
+                                        <li class="list-group-item px-0"><strong>Status:</strong> <span class="badge text-bg-success">Active</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal" data-bs-toggle="offcanvas" data-bs-target="#editStudentOffcanvas" aria-controls="editStudentOffcanvas">Edit Student</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="studentModal212" tabindex="-1" aria-labelledby="studentModal212Label" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content border-0 shadow">
+                        <div class="modal-header">
+                            <div>
+                                <h5 class="modal-title" id="studentModal212Label">Omar Ali</h5>
+                                <p class="text-muted small mb-0">Student details</p>
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-md-4 text-center">
+                                    <img src="https://randomuser.me/api/portraits/men/88.jpg" class="img-fluid rounded-circle student-modal-img" alt="Omar Ali" />
+                                </div>
+                                <div class="col-md-8">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item px-0"><strong>ID:</strong> 212</li>
+                                        <li class="list-group-item px-0"><strong>Batch:</strong> Batch 2024</li>
+                                        <li class="list-group-item px-0"><strong>Email:</strong> omar@example.com</li>
+                                        <li class="list-group-item px-0"><strong>Attendance:</strong> 94%</li>
+                                        <li class="list-group-item px-0"><strong>Status:</strong> <span class="badge text-bg-danger">Pending</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal" data-bs-toggle="offcanvas" data-bs-target="#editStudentOffcanvas" aria-controls="editStudentOffcanvas">Edit Student</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="studentModal213" tabindex="-1" aria-labelledby="studentModal213Label" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content border-0 shadow">
+                        <div class="modal-header">
+                            <div>
+                                <h5 class="modal-title" id="studentModal213Label">Hina Patel</h5>
+                                <p class="text-muted small mb-0">Student details</p>
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-md-4 text-center">
+                                    <img src="https://randomuser.me/api/portraits/women/12.jpg" class="img-fluid rounded-circle student-modal-img" alt="Hina Patel" />
+                                </div>
+                                <div class="col-md-8">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item px-0"><strong>ID:</strong> 213</li>
+                                        <li class="list-group-item px-0"><strong>Batch:</strong> Batch 2024</li>
+                                        <li class="list-group-item px-0"><strong>Email:</strong> hina@example.com</li>
+                                        <li class="list-group-item px-0"><strong>Attendance:</strong> 83%</li>
+                                        <li class="list-group-item px-0"><strong>Status:</strong> <span class="badge text-bg-success">Active</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal" data-bs-toggle="offcanvas" data-bs-target="#editStudentOffcanvas" aria-controls="editStudentOffcanvas">Edit Student</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="studentModal214" tabindex="-1" aria-labelledby="studentModal214Label" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content border-0 shadow">
+                        <div class="modal-header">
+                            <div>
+                                <h5 class="modal-title" id="studentModal214Label">Ravi Shah</h5>
+                                <p class="text-muted small mb-0">Student details</p>
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-md-4 text-center">
+                                    <img src="https://randomuser.me/api/portraits/men/29.jpg" class="img-fluid rounded-circle student-modal-img" alt="Ravi Shah" />
+                                </div>
+                                <div class="col-md-8">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item px-0"><strong>ID:</strong> 214</li>
+                                        <li class="list-group-item px-0"><strong>Batch:</strong> Batch 2024</li>
+                                        <li class="list-group-item px-0"><strong>Email:</strong> ravi@example.com</li>
+                                        <li class="list-group-item px-0"><strong>Attendance:</strong> 90%</li>
+                                        <li class="list-group-item px-0"><strong>Status:</strong> <span class="badge text-bg-success">Active</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal" data-bs-toggle="offcanvas" data-bs-target="#editStudentOffcanvas" aria-controls="editStudentOffcanvas">Edit Student</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="editStudentOffcanvas" aria-labelledby="editStudentOffcanvasLabel">
+                <div class="offcanvas-header border-bottom">
+                    <div>
+                        <h5 class="offcanvas-title" id="editStudentOffcanvasLabel">Edit Student</h5>
+                        <p class="text-muted small mb-0">Update student profile details</p>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <form class="row g-3 offcanvas-form">
+                        <div class="col-12">
+                            <label for="editStudentName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="editStudentName" placeholder="Student full name" />
+                        </div>
+                        <div class="col-12">
+                            <label for="editStudentBatch" class="form-label">Batch</label>
+                            <input type="text" class="form-control" id="editStudentBatch" placeholder="Batch 2024" />
+                        </div>
+                        <div class="col-12">
+                            <label for="editStudentProfilePic" class="form-label">Profile Pic</label>
+                            <input type="file" class="form-control" id="editStudentProfilePic" />
+                        </div>
+                        <div class="col-12">
+                            <label for="editStudentEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="editStudentEmail" placeholder="student@example.com" />
+                        </div>
+                        <div class="col-12">
+                            <label for="editStudentPhone" class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="editStudentPhone" placeholder="03xx-xxxxxxx" />
+                        </div>
+                        <div class="col-12">
+                            <label for="editStudentStatus" class="form-label">Status</label>
+                            <select class="form-select" id="editStudentStatus">
+                                <option selected>Active</option>
+                                <option>On Leave</option>
+                                <option>Pending</option>
+                                <option>Needs Support</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label for="editStudentNotes" class="form-label">Notes</label>
+                            <textarea class="form-control" id="editStudentNotes" rows="3" placeholder="Add any notes"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary w-100">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="filterStudentsOffcanvas" aria-labelledby="filterStudentsOffcanvasLabel">
+                <div class="offcanvas-header border-bottom">
+                    <div>
+                        <h5 class="offcanvas-title" id="filterStudentsOffcanvasLabel">Filter Students</h5>
+                        <p class="text-muted small mb-0">Refine the student list by key criteria</p>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <form class="row g-3 offcanvas-form">
+                        <div class="col-12">
+                            <label for="filterBatch" class="form-label">Batch</label>
+                            <select class="form-select" id="filterBatch">
+                                <option selected>All Batches</option>
+                                <option>Batch 2024</option>
+                                <option>Batch 2023</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label for="filterGender" class="form-label">Gender</label>
+                            <select class="form-select" id="filterGender">
+                                <option selected>All</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label for="filterAge" class="form-label">Age</label>
+                            <input type="number" class="form-control" id="filterAge" placeholder="Enter age" min="18" max="40" />
+                        </div>
+                        <div class="col-12">
+                            <label for="filterFees" class="form-label">Fees</label>
+                            <input type="number" class="form-control" id="filterFees" placeholder="Enter fee amount" min="0" />
+                        </div>
+                        <div class="col-12 mt-4">
+                            <button type="button" class="btn btn-primary w-100" data-bs-dismiss="offcanvas">Apply</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="addStudentOffcanvas" aria-labelledby="addStudentOffcanvasLabel">
+                <div class="offcanvas-header border-bottom">
+                    <div>
+                        <h5 class="offcanvas-title" id="addStudentOffcanvasLabel">Add Student</h5>
+                        <p class="text-muted small mb-0">Create a new student profile</p>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <form class="row g-3 offcanvas-form">
+                        <div class="col-12">
+                            <label for="offcanvasAddStudentName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="offcanvasAddStudentName" placeholder="Student full name" />
+                        </div>
+                        <div class="col-12">
+                            <label for="offcanvasAddStudentBatch" class="form-label">Batch</label>
+                            <input type="text" class="form-control" id="offcanvasAddStudentBatch" placeholder="Batch 2024" />
+                        </div>
+                        <div class="col-12">
+                            <label for="offcanvasAddStudentProfilePic" class="form-label">Profile Pic</label>
+                            <input type="file" class="form-control" id="offcanvasAddStudentProfilePic" />
+                        </div>
+                        <div class="col-12">
+                            <label for="offcanvasAddStudentEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="offcanvasAddStudentEmail" placeholder="student@example.com" />
+                        </div>
+                        <div class="col-12">
+                            <label for="offcanvasAddStudentPhone" class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="offcanvasAddStudentPhone" placeholder="03xx-xxxxxxx" />
+                        </div>
+                        <div class="col-12">
+                            <label for="offcanvasAddStudentStatus" class="form-label">Status</label>
+                            <select class="form-select" id="offcanvasAddStudentStatus">
+                                <option selected>Active</option>
+                                <option>On Leave</option>
+                                <option>Pending</option>
+                                <option>Needs Support</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label for="offcanvasAddStudentNotes" class="form-label">Notes</label>
+                            <textarea class="form-control" id="offcanvasAddStudentNotes" rows="3" placeholder="Add any notes"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary w-100">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

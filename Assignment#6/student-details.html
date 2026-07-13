@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-soft">
+  <div class="container py-4 detail-page">
+    <a href="dashboard.html" class="btn btn-outline-secondary btn-sm mb-4">&larr; Back to Dashboard</a>
+
+    <section class="card shadow-sm border-0 detail-hero mb-4">
+      <div class="card-body p-4">
+        <div class="d-flex flex-column flex-md-row align-items-center gap-4">
+          <img id="student-photo" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ayesha Khan" class="profile-avatar" />
+          <div class="w-100">
+            <p class="text-muted mb-1">Student Profile</p>
+            <h1 id="student-name" class="h3 mb-2">Ayesha Khan</h1>
+            <p id="student-bio" class="text-muted mb-3">A dependable student with excellent class participation and strong project work.</p>
+
+            <div class="row g-3">
+              <div class="col-sm-6 col-lg-3">
+                <div class="detail-box">
+                  <span class="detail-label">Student ID</span>
+                  <strong id="student-id">201</strong>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-3">
+                <div class="detail-box">
+                  <span class="detail-label">Batch</span>
+                  <strong id="student-batch">Batch 2024</strong>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-3">
+                <div class="detail-box">
+                  <span class="detail-label">Attendance</span>
+                  <strong id="student-attendance">92%</strong>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-3">
+                <div class="detail-box">
+                  <span class="detail-label">Status</span>
+                  <strong id="student-status">Active</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="row g-4 mb-4">
+      <div class="col-lg-6">
+        <section class="card shadow-sm border-0 h-100">
+          <div class="card-body p-4">
+            <h2 class="h5 mb-3">Personal Information</h2>
+            <div class="row g-3">
+              <div class="col-12 col-sm-6">
+                <div class="detail-box">
+                  <span class="detail-label">Email</span>
+                  <strong id="student-email">ayesha@example.com</strong>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="detail-box">
+                  <span class="detail-label">Phone</span>
+                  <strong id="student-phone">+92 300 1111111</strong>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="detail-box">
+                  <span class="detail-label">Department</span>
+                  <strong id="student-department">Computer Science</strong>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="detail-box">
+                  <span class="detail-label">Address</span>
+                  <strong id="student-address">Lahore, Pakistan</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-lg-6">
+        <section class="card shadow-sm border-0 h-100">
+          <div class="card-body p-4">
+            <h2 class="h5 mb-3">Performance Overview</h2>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item px-0"><strong>Assignments:</strong> <span id="student-assignments">Completed 8/10 assignments with a 90% average.</span></li>
+              <li class="list-group-item px-0"><strong>Quizzes:</strong> <span id="student-quizzes">Scored 88% in the latest quiz cycle.</span></li>
+              <li class="list-group-item px-0"><strong>Results:</strong> <span id="student-results">Semester result trend is improving steadily with an overall grade of A.</span></li>
+              <li class="list-group-item px-0"><strong>Current Grade:</strong> <span id="student-grade">A</span></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="d-flex flex-wrap gap-2 mb-4" aria-label="Student sections">
+      <a class="btn btn-primary btn-sm" href="#assignments">Assignments</a>
+      <a class="btn btn-outline-primary btn-sm" href="#quizzes">Quizzes</a>
+      <a class="btn btn-outline-primary btn-sm" href="#results">Results</a>
+    </div>
+
+    <section id="assignments" class="card shadow-sm border-0 mb-4 detail-section">
+      <div class="card-body p-4">
+        <h2 class="h5 mb-3">Assignments</h2>
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Due Date</th>
+                <th scope="col">Status</th>
+                <th scope="col">Score</th>
+              </tr>
+            </thead>
+            <tbody id="assignments-list">
+              <tr><td>Web Development Task</td><td>10 Jul</td><td><span class="badge bg-success">Submitted</span></td><td>88/100</td></tr>
+              <tr><td>Bootstrap Practice</td><td>12 Jul</td><td><span class="badge bg-warning text-dark">Pending</span></td><td>&mdash;</td></tr>
+              <tr><td>Project Proposal</td><td>15 Jul</td><td><span class="badge bg-success">Submitted</span></td><td>92/100</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="quizzes" class="card shadow-sm border-0 mb-4 detail-section">
+      <div class="card-body p-4">
+        <h2 class="h5 mb-3">Quizzes</h2>
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+              <tr>
+                <th scope="col">Quiz</th>
+                <th scope="col">Topic</th>
+                <th scope="col">Date</th>
+                <th scope="col">Marks</th>
+              </tr>
+            </thead>
+            <tbody id="quizzes-list">
+              <tr><td>Quiz 1</td><td>HTML Basics</td><td>02 Jul</td><td>18/20</td></tr>
+              <tr><td>Quiz 2</td><td>CSS Styling</td><td>05 Jul</td><td>16/20</td></tr>
+              <tr><td>Quiz 3</td><td>JavaScript Essentials</td><td>08 Jul</td><td>19/20</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="results" class="card shadow-sm border-0 mb-5 detail-section">
+      <div class="card-body p-4">
+        <h2 class="h5 mb-3">Results</h2>
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+              <tr>
+                <th scope="col">Exam</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Obtained</th>
+                <th scope="col">Grade</th>
+              </tr>
+            </thead>
+            <tbody id="results-list">
+              <tr><td>Mid Term</td><td>Web Development</td><td>78/100</td><td>B+</td></tr>
+              <tr><td>Final Quiz</td><td>UI Design</td><td>91/100</td><td>A</td></tr>
+              <tr><td>Lab Assessment</td><td>Bootstrap</td><td>85/100</td><td>A-</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+</body>
+</html>
